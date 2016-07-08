@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [L]
+
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)?$ $1.php?id=$2&pid=$3 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)?$ $1.php?id=$2 [L]
+RewriteRule ^([^/\.]+)?$ $1.php [L]
+Options -MultiViews
